@@ -1,19 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+    android:background="@color/white"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
-
+    android:layout_height="match_parent">
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        android:textColor="#000000"
+        android:id="@+id/yaEsSep"
+        android:layout_width="345dp"
+        android:layout_height="50dp"
+        android:text="@string/ya_es_septiembre"
+        android:fontFamily="casual"
+        android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.248"/>
+    <TextView
+        android:textSize="96sp"
+        android:textStyle="bold"
+        android:textColor="#000000"
+        android:id="@+id/siNo"
+        android:layout_width="288dp"
+        android:layout_height="132dp"
+        android:text="@string/s"
+        android:textAllCaps="false"
+        android:fontFamily="casual"
+        android:textAlignment="center"
+        app:flow_horizontalAlign="center"
+        app:flow_verticalAlign="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/yaEsSep"
+        app:layout_constraintVertical_bias="0.289"/>
+    <TextView
+        android:textSize="34sp"
+        android:textStyle="italic"
+        android:textColor="#000000"
+        android:id="@+id/faltanDias"
+        android:layout_width="280dp"
+        android:layout_height="66dp"
+        android:text="@string/faltanDias"
+        android:lineSpacingExtra="60sp"
+        android:fontFamily="casual"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/siNo"
+        app:layout_constraintVertical_bias="0.509"/>
+    <ImageView
+        android:id="@+id/dino"
+        android:visibility="invisible"
+        android:layout_width="292dp"
+        android:layout_height="156dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.451"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/siNo"
+        app:layout_constraintVertical_bias="0.553"
+        app:srcCompat="@drawable/dino2calm"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
