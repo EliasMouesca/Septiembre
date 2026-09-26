@@ -34,12 +34,12 @@ class MainActivity : AppCompatActivity() {
         if (esBisieto) {
             primerDiaSeptiembre = 245
         }
-        if (now.get(6) < primerDiaSeptiembre) {
-            daysRemaining = primerDiaSeptiembre - now.get(6)
+        daysRemaining = if (now.get(6) < primerDiaSeptiembre) {
+            primerDiaSeptiembre - now.get(6)
         } else if (now.get(6) > primerDiaSeptiembre + 30) {
-            daysRemaining = (primerDiaSeptiembre + 365) - now.get(6)
+            (primerDiaSeptiembre + 365) - now.get(6)
         } else {
-            daysRemaining = 0
+            0
         }
         SpannableString("No")
         if (daysRemaining == 0) {
@@ -49,10 +49,7 @@ class MainActivity : AppCompatActivity() {
         } else {
             val content2 = SpannableString("No")
             val withMarkup = getString(R.string.faltanDiasHtml, arrayOf<Any?>(daysRemaining))
-            Intrinsics.checkNotNullExpressionValue(
-                withMarkup,
-                "getString(R.string.faltanDiasHtml, daysRemaining)"
-            )
+            Intrinsics.checkNotNullExpressionValue( withMarkup, "getString(R.string.faltanDiasHtml, daysRemaining)" )
             (findViewById<View?>(R.id.faltanDias) as TextView).text = Html.fromHtml(withMarkup)
             (findViewById<View?>(R.id.dino) as ImageView).visibility = View.INVISIBLE
             content = content2

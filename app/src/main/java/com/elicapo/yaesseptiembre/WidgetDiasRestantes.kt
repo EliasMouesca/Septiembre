@@ -44,12 +44,12 @@ internal fun updateAppWidget( context: Context, appWidgetManager: AppWidgetManag
     if (esBisieto) {
         primerDiaSeptiembre = 245
     }
-    if (now.get(6) < primerDiaSeptiembre) {
-        daysRemaining = primerDiaSeptiembre - now.get(6)
+    daysRemaining = if (now.get(6) < primerDiaSeptiembre) {
+        primerDiaSeptiembre - now.get(6)
     } else if (now.get(6) > primerDiaSeptiembre + 29) {
-        daysRemaining = (primerDiaSeptiembre + 365) - now.get(6)
+        (primerDiaSeptiembre + 365) - now.get(6)
     } else {
-        daysRemaining = 0
+        0
     }
     if (daysRemaining == 0) {
         views.setImageViewResource(R.id.fotoWidget, R.drawable.imagenseptiembre)
