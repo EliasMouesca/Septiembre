@@ -36,6 +36,17 @@ internal fun updateAppWidget(
         views.setImageViewResource(R.id.fotoWidget, R.drawable.estilo_marco)
         views.setViewVisibility(R.id.septiembre, View.INVISIBLE)
         views.setTextViewText(R.id.remainingTV, daysRemaining.toString())
+        views.setTextViewText(
+            R.id.faltanTV,
+            context.resources.getQuantityString(R.plurals.widget_faltan, daysRemaining)
+        )
+        views.setTextViewText(
+            R.id.paraSepTV,
+            context.resources.getQuantityString(
+                R.plurals.widget_para_septiembre,
+                daysRemaining
+            )
+        )
         views.setViewVisibility(R.id.faltanTV, View.VISIBLE)
         views.setViewVisibility(R.id.remainingTV, View.VISIBLE)
         views.setViewVisibility(R.id.paraSepTV, View.VISIBLE)

@@ -5,7 +5,6 @@
     android:minHeight="40dp"
     android:updatePeriodMillis="14400000"
     android:initialLayout="@layout/widget_dias_restantes"
-    android:previewImage="@drawable/example_appwidget_preview"
     android:resizeMode="vertical|horizontal"
     android:initialKeyguardLayout="@layout/widget_dias_restantes"
     android:widgetCategory="keyguard|home_screen"/>

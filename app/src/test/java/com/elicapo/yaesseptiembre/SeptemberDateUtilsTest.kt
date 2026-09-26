@@ -11,6 +11,11 @@ class SeptemberDateUtilsTest {
     }
 
     @Test
+    fun august1_returns31Days() {
+        assertEquals(31, daysUntilSeptember(date(2025, Calendar.AUGUST, 1)))
+    }
+
+    @Test
     fun september_returnsZeroDays() {
         assertEquals(0, daysUntilSeptember(date(2025, Calendar.SEPTEMBER, 1)))
         assertEquals(0, daysUntilSeptember(date(2025, Calendar.SEPTEMBER, 30)))
@@ -19,6 +24,11 @@ class SeptemberDateUtilsTest {
     @Test
     fun leapYearOctober_usesNextSeptember() {
         assertEquals(335, daysUntilSeptember(date(2024, Calendar.OCTOBER, 1)))
+    }
+
+    @Test
+    fun nonLeapYearOctober_usesNextSeptember() {
+        assertEquals(335, daysUntilSeptember(date(2025, Calendar.OCTOBER, 1)))
     }
 
     @Test
