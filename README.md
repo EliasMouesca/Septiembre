@@ -11,3 +11,7 @@ Aplicación Android que muestra cuántos días faltan para septiembre y ofrece u
 ### Widget
 
 ![Captura del widget](img/widget.png)
+
+## APK firmado
+
+Para compilar una versión firmada usando 1Password, seguí las instrucciones de [docs/RELEASING.md](docs/RELEASING.md).

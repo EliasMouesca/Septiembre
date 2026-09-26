@@ -2,6 +2,11 @@ plugins {
     alias(libs.plugins.android.application)
 }
 
+val releaseKeystoreFile = System.getenv("SEPTIEMBRE_KEYSTORE_FILE")
+val releaseKeystorePassword = System.getenv("SEPTIEMBRE_KEYSTORE_PASSWORD")
+val releaseKeyAlias = System.getenv("SEPTIEMBRE_KEY_ALIAS")
+val releaseKeyPassword = System.getenv("SEPTIEMBRE_KEY_PASSWORD")
+
 android {
     namespace = "com.elicapo.yaesseptiembre"
     compileSdk {
@@ -18,8 +23,17 @@ android {
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
+    signingConfigs {
+        create("release") {
+            releaseKeystoreFile?.let { storeFile = file(it) }
+            storePassword = releaseKeystorePassword
+            keyAlias = releaseKeyAlias
+            keyPassword = releaseKeyPassword
+        }
+    }
     buildTypes {
         release {
+            signingConfig = signingConfigs.getByName("release")
             optimization {
                 enable = false
             }
