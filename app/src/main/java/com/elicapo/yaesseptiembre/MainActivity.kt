@@ -28,6 +28,8 @@ class MainActivity : AppCompatActivity() {
     override fun onStart() {
         super.onStart()
 
+        updateAllWidgets(this)
+
         val daysRemaining = daysUntilSeptember(Calendar.getInstance())
 
         val content = if (daysRemaining == 0) {
